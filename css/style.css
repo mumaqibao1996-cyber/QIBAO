@@ -216,6 +216,17 @@ ul { list-style: none; }
 /* ==============================================
    HOME PAGE
    ============================================== */
+
+/* ---- Hero 入场动效 keyframes ---- */
+@keyframes hero-slide-left {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .hero {
   min-height: 100vh;
   padding-top: 64px;
@@ -224,7 +235,7 @@ ul { list-style: none; }
   border-bottom: var(--border-thick);
 }
 
-/* Left: Color block + photo */
+/* 左侧照片区：从左侧滑入 */
 .hero-visual {
   position: relative;
   background: var(--red);
@@ -232,6 +243,7 @@ ul { list-style: none; }
   overflow: hidden;
   display: flex;
   align-items: stretch;
+  animation: hero-slide-left 0.8s cubic-bezier(.22,.68,0,1.2) both;
 }
 /* Diagonal stripe overlay */
 .hero-visual::before {
@@ -256,6 +268,11 @@ ul { list-style: none; }
   display: block;
 }
 /* Big diagonal label */
+@keyframes stamp-float {
+  0%,100% { transform: translateX(-50%) rotate(-8deg) translateY(0px); }
+  50%      { transform: translateX(-50%) rotate(-8deg) translateY(-10px); }
+}
+
 .hero-visual-stamp {
   position: absolute;
   bottom: 3rem; left: 50%;
@@ -269,9 +286,10 @@ ul { list-style: none; }
   white-space: nowrap;
   box-shadow: var(--shadow);
   z-index: 5;
+  animation: stamp-float 3.5s ease-in-out infinite;
 }
 
-/* Right: Content */
+/* Right: Content - 右侧内容区：整体从右制 */
 .hero-content {
   background: var(--offwhite);
   display: flex;
@@ -279,6 +297,21 @@ ul { list-style: none; }
   justify-content: center;
   padding: 5rem 4rem;
   position: relative;
+  animation: hero-rise 0.7s 0.15s cubic-bezier(.22,.68,0,1) both;
+}
+
+/* 内容区各元素错落入场 */
+.hero-welcome {
+  animation: hero-rise 0.6s 0.2s both;
+}
+.hero-tagline {
+  animation: hero-rise 0.6s 0.4s both;
+}
+.hero-badges {
+  animation: hero-rise 0.5s 0.6s both;
+}
+.hero-btns {
+  animation: hero-rise 0.5s 0.75s both;
 }
 /* Top-right corner: fortune clicker */
 .hero-content::before { display: none; } /* 禁用原伪元素蓝角 */
@@ -674,19 +707,19 @@ ul { list-style: none; }
    SHARED PAGE HEADER
    ============================================== */
 .pop-header {
-  padding-top: 40px;
+  padding-top: 20px;
   padding-bottom: 0;
   margin-bottom: 0;
 }
 .pop-page-title {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
   letter-spacing: -1px;
   line-height: 1;
   color: var(--black);
   border-bottom: var(--border-thick);
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
+  padding-bottom: 0.8rem;
+  margin-bottom: 1.5rem;
 }
 .pop-page-title .t-red { color: var(--red); }
 .pop-page-title .t-blue { color: var(--blue); }

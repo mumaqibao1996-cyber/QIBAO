@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>七宝的世界 · POP ART</title>
+  <meta name="description" content="七宝的世界 — ESTP · 法语 · 健身 · 美食 · 探索" />
+  <!-- 字体异步加载，不阻塞渲染 -->
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=Noto+Sans+SC:wght@300;400;500&display=swap" />
+  <noscript><link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=Noto+Sans+SC:wght@300;400;500&display=swap" /></noscript>
+  <link rel="stylesheet" href="css/style.css?v=20260406" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>" />
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-logo">七宝的个人主页</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#" onclick="showPage('home');return false;" class="active" id="nav-home">Home</a></li>
+    <li><a href="#" onclick="showPage('blogs');return false;" id="nav-blogs">Blog</a></li>
+    <li><a href="#" onclick="showPage('gallery');return false;" id="nav-gallery">Gallery</a></li>
+    <li><a href="#" onclick="showPage('videos');return false;" id="nav-videos">Videos</a></li>
+    <li><a href="#" onclick="showPage('projects');return false;" id="nav-projects">Projects</a></li>
+    <li><a href="#" onclick="showPage('contact');return false;" id="nav-contact">Contact</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ================================================
+     HOME PAGE
+     ================================================ -->
+<div class="page active" id="page-home">
+
+  <section class="hero">
+    <!-- Left: photo panel -->
+    <div class="hero-visual">
+      <img src="images/avatar.jpg" alt="七宝" class="hero-photo" />
+      <div class="hero-visual-stamp">Christmas Birthday in Beijing, 2024</div>
+    </div>
+
+    <!-- Right: content -->
+    <div class="hero-content">
+      <!-- 右上角卷边翻页 -->
+      <div class="fortune-corner" onclick="openFortune()" title="今日运势"></div>
+      <div class="hero-title">
+        <span class="hero-welcome">欢迎来到七宝的世界</span>
+        <span class="hero-tagline">A Digital Marketer,<br/>A Future Billionaire</span>
+        <span class="hero-badges">
+          <span class="hb-item">ESTP (100% E)</span>
+          <span class="hb-sep">&nbsp;｜&nbsp;</span>
+          <span class="hb-item">Trilingual (CN/EN/FR)</span>
+          <span class="hb-sep">&nbsp;|&nbsp;</span>
+          <span class="hb-item">ToB BD &amp; Ops</span>
+          <span class="hb-sep">&nbsp;|&nbsp;</span>
+          <span class="hb-item">Fitness Coach</span>
+          <span class="hb-sep">&nbsp;|&nbsp;</span>
+          <span class="hb-item">Social Media Foodie</span>
+          <span class="hb-sep">&nbsp;|&nbsp;</span>
+          <span class="hb-item">Curiosity Explorer</span>
+        </span>
+      </div>
+
+      <div class="hero-btns">
+        <button class="btn btn-red" onclick="document.getElementById('home-about').scrollIntoView({behavior:'smooth'})">了解我的故事</button>
+        <button class="btn btn-outline" onclick="showPage('contact')">联系我</button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===== 合并导航板块：色条 + 简笔 icon + 标题 + 描述 ===== -->
+  <div class="section-nav">
+
+    <!-- 01 ABOUT -->
+    <div class="sn-item reveal" onclick="document.getElementById('home-about').scrollIntoView({behavior:'smooth'})">
+      <div class="sn-bar" style="background:#FF1744;"></div>
+      <div class="sn-body">
+        <span class="sn-num">01</span>
+        <div class="sn-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="20" cy="13" r="6"/>
+            <path d="M6 36c0-7.732 6.268-14 14-14s14 6.268 14 14"/>
+          </svg>
+        </div>
+        <div class="sn-title">About</div>
+        <div class="sn-desc">ESTP · 北非经历 · 人生时间线</div>
+        <span class="sn-arrow">→</span>
+      </div>
+    </div>
+
+    <!-- 02 BLOG -->
+    <div class="sn-item reveal" onclick="showPage('blogs')">
+      <div class="sn-bar" style="background:#FFE500;"></div>
+      <div class="sn-body">
+        <span class="sn-num">02</span>
+        <div class="sn-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="7" y="5" width="26" height="30" rx="2"/>
+            <line x1="13" y1="13" x2="27" y2="13"/>
+            <line x1="13" y1="19" x2="27" y2="19"/>
+            <line x1="13" y1="25" x2="21" y2="25"/>
+          </svg>
+        </div>
+        <div class="sn-title">Blog</div>
+        <div class="sn-desc">职场感悟 · 生活探索 · 海外见闻</div>
+        <span class="sn-arrow">→</span>
+      </div>
+    </div>
+
+    <!-- 03 GALLERY -->
+    <div class="sn-item reveal" onclick="showPage('gallery')">
+      <div class="sn-bar" style="background:#FF4081;"></div>
+      <div class="sn-body">
+        <span class="sn-num">03</span>
+        <div class="sn-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="8" width="32" height="24" rx="2"/>
+            <circle cx="14" cy="17" r="3"/>
+            <path d="M4 28l9-9 6 6 5-5 8 8"/>
+          </svg>
+        </div>
+        <div class="sn-title">Gallery</div>
+        <div class="sn-desc">旅行 · 生活 · 美食瞬间</div>
+        <span class="sn-arrow">→</span>
+      </div>
+    </div>
+
+    <!-- 04 VIDEOS -->
+    <div class="sn-item reveal" onclick="showPage('videos')">
+      <div class="sn-bar" style="background:#0057FF;"></div>
+      <div class="sn-body">
+        <span class="sn-num">04</span>
+        <div class="sn-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="9" width="24" height="22" rx="2"/>
+            <path d="M27 15l10-6v22l-10-6V15z"/>
+          </svg>
+        </div>
+        <div class="sn-title">Videos</div>
+        <div class="sn-desc">健身日常 · Vlog · 美食记录</div>
+        <span class="sn-arrow">→</span>
+      </div>
+    </div>
+
+    <!-- 05 PROJECTS -->
+    <div class="sn-item reveal" onclick="showPage('projects')">
+      <div class="sn-bar" style="background:#00E5FF;"></div>
+      <div class="sn-body">
+        <span class="sn-num">05</span>
+        <div class="sn-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 4l3.5 7 7.5 1-5.5 5.5 1.3 7.5L20 22l-6.8 3-1.3-7.5L7 12l7.5-1z" stroke-linejoin="round"/>
+            <path d="M14 28l-4 8M26 28l4 8"/>
+          </svg>
+        </div>
+        <div class="sn-title">Projects</div>
+        <div class="sn-desc">翻译出版 · 创作副业 · AI探索</div>
+        <span class="sn-arrow">→</span>
+      </div>
+    </div>
+
+    <!-- 06 CONTACT -->
+    <div class="sn-item reveal" onclick="showPage('contact')">
+      <div class="sn-bar" style="background:#00C853;"></div>
+      <div class="sn-body">
+        <span class="sn-num">06</span>
+        <div class="sn-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="10" width="32" height="22" rx="2"/>
+            <path d="M4 12l16 12L36 12"/>
+          </svg>
+        </div>
+        <div class="sn-title">Contact</div>
+        <div class="sn-desc">微博 · 小红书 · 抓住我</div>
+        <span class="sn-arrow">→</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== About 内容区（嵌入 Home 页下方） ===== -->
+  <section id="home-about" class="about-page">
+    <div class="container">
+      <div class="pop-header reveal">
+        <h1 class="pop-page-title">
+          <span class="t-red">关</span>于<span class="t-blue">七宝</span>
+        </h1>
+      </div>
+
+      <div class="about-hero reveal">
+        <div class="about-photo-wrap">
+          <div class="about-photo-badge">ESTP ✦</div>
+          <img src="images/avatar.jpg" alt="七宝" />
+        </div>
+        <div class="about-text-wrap">
+          <h2 class="about-name">你好，我是<span class="ar">七宝</span></h2>
+          <span class="about-role">BEIJING LANGUAGE AND CULTURE UNIVERSITY · HEBEI UNIVERSITY OF TECHNOLOGY</span>
+          <div class="about-bio">
+            <p>Welcome to 七宝的世界！这是一个对世界充满好奇心和探索欲的 <strong>100%E值的企业家人格ESTP</strong>！出生于1997年1月，典型喜欢叽里呱啦的文科生，大学和研究生读了<strong>法语专业</strong>，曾在法国度过无忧无虑的交换时光，也在<strong>北非阿尔及利亚</strong>的地中海酒店项目挥洒了一年青春。</p>
+            <p>高精力人群对一切新鲜事物都很感兴趣，尤其是和运动相关的项目：<strong>潜水、冲浪、Crossfit、拳击、羽毛球</strong>都有想要持续精进的想法！日常就是沉迷健身与烹饪美食和甜品，会在下班后挥洒汗水和呼朋唤友品尝美味（喜欢您来～）</p>
+          </div>
+          <div class="about-stats">
+            <div class="as-block"><div class="as-num">1.5万</div><div class="as-lbl">微博粉丝</div></div>
+            <div class="as-block"><div class="as-num">3+年</div><div class="as-lbl">练习时长</div></div>
+            <div class="as-block"><div class="as-num">1本</div><div class="as-lbl">出版译作</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Latest Updates -->
+      <div class="latest-section reveal">
+        <span class="pop-label">LATEST UPDATES · 近日生活</span>
+        <div class="latest-row">
+
+          <!-- 卡片1 -->
+          <div class="latest-card">
+            <div class="lc-tag">最近最爱做的菜</div>
+            <div class="lc-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 36c0-10 5-18 16-18s16 8 16 18"/>
+                <path d="M24 18v-6"/>
+                <path d="M16 14c0-4 3-6 8-6s8 2 8 6"/>
+                <line x1="8" y1="36" x2="40" y2="36"/>
+                <line x1="4" y1="42" x2="44" y2="42"/>
+              </svg>
+            </div>
+            <div class="lc-main">马来西亚肉骨茶</div>
+          </div>
+
+          <!-- 卡片2 -->
+          <div class="latest-card">
+            <div class="lc-tag">在刷的剧</div>
+            <div class="lc-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="10" width="40" height="28" rx="3"/>
+                <polyline points="4,10 24,26 44,10"/>
+                <line x1="16" y1="42" x2="32" y2="42"/>
+                <line x1="24" y1="38" x2="24" y2="42"/>
+              </svg>
+            </div>
+            <div class="lc-main">绯闻女孩<br/><span class="lc-sub">Gossip Girl</span></div>
+          </div>
+
+          <!-- 卡片3 -->
+          <div class="latest-card">
+            <div class="lc-tag">最近沉迷</div>
+            <div class="lc-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="24" cy="24" r="18"/>
+                <path d="M24 6a18 18 0 0 1 0 36"/>
+                <path d="M6 24h36"/>
+                <path d="M10 14h28M10 34h28"/>
+              </svg>
+            </div>
+            <div class="lc-main">Google Digital<br/><span class="lc-sub">Marketing &amp; AI</span></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline-section reveal">
+        <span class="pop-label">Chronicle · 大事记</span>
+        <div class="tl-grid">
+          <div class="tl-col">
+            <div class="tl-col-title">⚔ 主线任务</div>
+            <div class="tl-item"><div class="tl-yr">2025.11</div><div class="tl-ev">大模型与AI产品运营</div></div>
+            <div class="tl-item"><div class="tl-yr">2025.6</div><div class="tl-ev">语音房海外BD</div></div>
+            <div class="tl-item"><div class="tl-yr">2025.2</div><div class="tl-ev">图书海外版权销售</div></div>
+            <div class="tl-item"><div class="tl-yr">2024.1</div><div class="tl-ev">图书版权编辑</div></div>
+            <div class="tl-item"><div class="tl-yr">2022.7</div><div class="tl-ev">远赴北非 · 法语翻译</div></div>
+          </div>
+          <div class="tl-col">
+            <div class="tl-col-title">✦ 支线任务</div>
+            <div class="tl-item"><div class="tl-yr">2026.1</div><div class="tl-ev">微博粉丝突破1.5万</div></div>
+            <div class="tl-item"><div class="tl-yr">2025.6</div><div class="tl-ev">拿下NSCA-CPT健身教练证书</div></div>
+            <div class="tl-item"><div class="tl-yr">2024.10</div><div class="tl-ev">翻译的第一本漫画书出版</div></div>
+            <div class="tl-item"><div class="tl-yr">2024.7</div><div class="tl-ev">学会烘焙·承包好友生日蛋糕</div></div>
+            <div class="tl-item"><div class="tl-yr">2024.3</div><div class="tl-ev">遇见腼腆张姓男子并坠入爱河</div></div>
+            <div class="tl-item"><div class="tl-yr">2019.5</div><div class="tl-ev">开始拥有副业收入</div></div>
+            <div class="tl-item"><div class="tl-yr">2017.9</div><div class="tl-ev">第一次出国 · 法国交换</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-home -->
+
+<!-- ================================================
+     BLOGS PAGE
+     ================================================ -->
+<div class="page" id="page-blogs">
+  <div class="blogs-page">
+    <div class="container">
+      <div class="pop-header reveal">
+        <h1 class="pop-page-title">
+          文章<br/><span class="t-red">Blogs</span>
+        </h1>
+      </div>
+
+      <div class="blog-featured reveal" onclick="">
+        <div class="bf-visual">🌍</div>
+        <div class="bf-content">
+          <div class="bf-cat">Career · 2025.11</div>
+          <h2 class="bf-title">从法语翻译到AI产品运营——我的跨界探索之路</h2>
+          <p class="bf-excerpt">从北非的阳光到北京写字楼的格子间，这五年我经历了五份截然不同的工作。每一次跳跃都是一次对自我的重新认识...</p>
+          <button class="btn btn-outline" style="font-size:0.8rem;padding:10px 22px;">阅读全文 →</button>
+        </div>
+      </div>
+
+      <div class="blog-grid">
+        <div class="blog-card reveal">
+          <div class="bc-cover" style="background:#FFE500;">🏋️</div>
+          <div class="bc-body">
+            <div class="bc-cat">Fitness · 2025.6</div>
+            <h3 class="bc-title">拿下NSCA-CPT：备考三个月的真实体验</h3>
+            <div class="bc-meta">8 MIN READ</div>
+          </div>
+        </div>
+        <div class="blog-card reveal">
+          <div class="bc-cover" style="background:#00E5FF;">🇩🇿</div>
+          <div class="bc-body">
+            <div class="bc-cat">Travel · 2023.8</div>
+            <h3 class="bc-title">在阿尔及利亚的365天：地中海边的翻译日记</h3>
+            <div class="bc-meta">15 MIN READ</div>
+          </div>
+        </div>
+        <div class="blog-card reveal">
+          <div class="bc-cover" style="background:#FF4081;">🎂</div>
+          <div class="bc-body">
+            <div class="bc-cat">Baking · 2024.7</div>
+            <h3 class="bc-title">零基础到承包全组生日蛋糕：烘焙修炼手册</h3>
+            <div class="bc-meta">6 MIN READ</div>
+          </div>
+        </div>
+        <div class="blog-card reveal">
+          <div class="bc-cover" style="background:#0057FF;">🤿</div>
+          <div class="bc-body">
+            <div class="bc-cat">Sports · 2024.5</div>
+            <h3 class="bc-title">ESTP与潜水：当冒险型人格遇见深海</h3>
+            <div class="bc-meta">7 MIN READ</div>
+          </div>
+        </div>
+        <div class="blog-card reveal">
+          <div class="bc-cover" style="background:#00C853;">📖</div>
+          <div class="bc-body">
+            <div class="bc-cat">Translation · 2024.10</div>
+            <h3 class="bc-title">我翻译的第一本漫画书出版了！</h3>
+            <div class="bc-meta">9 MIN READ</div>
+          </div>
+        </div>
+        <div class="blog-card reveal">
+          <div class="bc-cover" style="background:#FF1744;">🥊</div>
+          <div class="bc-body">
+            <div class="bc-cat">Sports · 2025.3</div>
+            <h3 class="bc-title">女生打拳击：释放压力的最佳方式</h3>
+            <div class="bc-meta">5 MIN READ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================
+     VIDEOS PAGE
+     ================================================ -->
+<div class="page" id="page-videos">
+  <div class="videos-page">
+    <div class="container">
+      <div class="pop-header reveal">
+        <h1 class="pop-page-title">
+          视频<br/><span class="t-blue">Videos</span>
+        </h1>
+      </div>
+      <div class="video-grid">
+        <div class="video-card reveal" onclick="window.open('https://www.douyin.com','_blank')" style="background:#1a1a2e;">
+          <div class="v-bg">🏋️</div>
+          <div class="v-overlay"></div>
+          <div class="v-play">▶</div>
+          <div class="v-info"><div class="v-cat">健身</div><div class="v-title">今天把自己练到怀疑人生</div></div>
+        </div>
+        <div class="video-card reveal" onclick="window.open('https://www.douyin.com','_blank')" style="background:#001a2e;">
+          <div class="v-bg">🤿</div>
+          <div class="v-overlay"></div>
+          <div class="v-play">▶</div>
+          <div class="v-info"><div class="v-cat">潜水</div><div class="v-title">第一次深潜 | 在海底看到的一切</div></div>
+        </div>
+        <div class="video-card reveal" onclick="window.open('https://www.douyin.com','_blank')" style="background:#2e1a00;">
+          <div class="v-bg">🎂</div>
+          <div class="v-overlay"></div>
+          <div class="v-play">▶</div>
+          <div class="v-info"><div class="v-cat">烘焙</div><div class="v-title">手残党的第一个生日蛋糕竟然成功了</div></div>
+        </div>
+        <div class="video-card reveal" onclick="window.open('https://www.douyin.com','_blank')" style="background:#2e001a;">
+          <div class="v-bg">🥊</div>
+          <div class="v-overlay"></div>
+          <div class="v-play">▶</div>
+          <div class="v-info"><div class="v-cat">拳击</div><div class="v-title">女生打拳击 | 释放压力的最佳方式</div></div>
+        </div>
+        <div class="video-card reveal" onclick="window.open('https://www.douyin.com','_blank')" style="background:#001a0a;">
+          <div class="v-bg">🇩🇿</div>
+          <div class="v-overlay"></div>
+          <div class="v-play">▶</div>
+          <div class="v-info"><div class="v-cat">旅行</div><div class="v-title">北非阿尔及利亚vlog | 我的工作地点</div></div>
+        </div>
+        <div class="video-card reveal" onclick="window.open('https://www.douyin.com','_blank')" style="background:#1a1000;">
+          <div class="v-bg">🍜</div>
+          <div class="v-overlay"></div>
+          <div class="v-play">▶</div>
+          <div class="v-info"><div class="v-cat">美食</div><div class="v-title">北非最想念的中国美食 | 终于回家</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================
+     PROJECTS PAGE
+     ================================================ -->
+<div class="page" id="page-projects">
+  <div class="projects-page">
+    <div class="container">
+      <div class="pop-header reveal">
+        <h1 class="pop-page-title">
+          作品<br/><span class="t-yellow">Projects</span>
+        </h1>
+      </div>
+      <div class="project-grid">
+        <div class="proj-card reveal">
+          <span class="proj-num">PROJECT 01</span>
+          <div class="proj-icon">📖</div>
+          <h3 class="proj-title">法语漫画翻译出版</h3>
+          <p class="proj-desc">作为译者，将法语原版漫画翻译成中文。2024年10月正式出版，是我第一本正式出版的译作。</p>
+          <div><span class="tag">法语翻译</span><span class="tag">出版</span><span class="tag">漫画</span></div>
+          <span class="proj-arrow">→</span>
+        </div>
+        <div class="proj-card reveal">
+          <span class="proj-num">PROJECT 02</span>
+          <div class="proj-icon">📱</div>
+          <h3 class="proj-title">微博内容创作 · 1.5万粉丝</h3>
+          <p class="proj-desc">在微博持续输出真实生活内容，粉丝突破1.5万。记录健身、美食、职场、旅行。</p>
+          <div><span class="tag">内容创作</span><span class="tag">个人品牌</span></div>
+          <span class="proj-arrow">→</span>
+        </div>
+        <div class="proj-card reveal">
+          <span class="proj-num">PROJECT 03</span>
+          <div class="proj-icon">🌍</div>
+          <h3 class="proj-title">北非酒店项目 · 法语翻译</h3>
+          <p class="proj-desc">2022年赴阿尔及利亚参与地中海酒店项目，担任法语翻译，积累宝贵跨文化工作经验。</p>
+          <div><span class="tag">法语翻译</span><span class="tag">海外工作</span></div>
+          <span class="proj-arrow">→</span>
+        </div>
+        <div class="proj-card reveal">
+          <span class="proj-num">PROJECT 04</span>
+          <div class="proj-icon">🤖</div>
+          <h3 class="proj-title">AI产品运营</h3>
+          <p class="proj-desc">2025年11月起投身AI产品运营，探索大模型在内容创作、用户运营方向的实践。</p>
+          <div><span class="tag">AI产品</span><span class="tag">大模型</span></div>
+          <span class="proj-arrow">→</span>
+        </div>
+        <div class="proj-card reveal">
+          <span class="proj-num">PROJECT 05</span>
+          <div class="proj-icon">💪</div>
+          <h3 class="proj-title">NSCA-CPT 健身教练认证</h3>
+          <p class="proj-desc">2025年6月取得NSCA-CPT国际认证，为健身指导和未来副业提供专业基础。</p>
+          <div><span class="tag">NSCA-CPT</span><span class="tag">健身</span></div>
+          <span class="proj-arrow">→</span>
+        </div>
+        <div class="proj-card reveal">
+          <span class="proj-num">PROJECT 06</span>
+          <div class="proj-icon">🎂</div>
+          <h3 class="proj-title">烘焙创作 · 口碑经营</h3>
+          <p class="proj-desc">从零学习烘焙，承包朋友圈所有好友生日蛋糕，正在探索甜品副业的可能性。</p>
+          <div><span class="tag">烘焙</span><span class="tag">甜品</span><span class="tag">副业</span></div>
+          <span class="proj-arrow">→</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================
+     CONTACT PAGE
+     ================================================ -->
+<div class="page" id="page-contact">
+  <div class="contact-page">
+    <div class="container">
+      <div class="pop-header reveal">
+        <h1 class="pop-page-title">
+          联系<br/><span class="t-red">Contact</span>
+        </h1>
+      </div>
+      <div class="contact-grid reveal">
+        <div class="contact-left">
+          <h2 class="contact-headline">随时欢迎来聊<br/>健身、美食、职场<br/>或任何有趣的事！</h2>
+          <p class="contact-motto">在真实世界中探索更多体验，每一天都是人生中最年轻的一天！</p>
+          <div class="channels">
+            <a href="https://weibo.com" target="_blank" class="channel">
+              <div class="ch-ico">微</div>
+              <div><span class="ch-n">微博</span><span class="ch-d">真实生活 · 1.5万+ 粉丝</span></div>
+            </a>
+            <a href="https://www.xiaohongshu.com" target="_blank" class="channel">
+              <div class="ch-ico">📕</div>
+              <div><span class="ch-n">小红书</span><span class="ch-d">职业发展 · 生活感悟</span></div>
+            </a>
+            <a href="https://www.douyin.com" target="_blank" class="channel">
+              <div class="ch-ico">🎵</div>
+              <div><span class="ch-n">抖音</span><span class="ch-d">健身瞬间 · 日常Vlog</span></div>
+            </a>
+            <a href="mailto:hello@qibao.world" class="channel">
+              <div class="ch-ico">✉</div>
+              <div><span class="ch-n">Email</span><span class="ch-d">hello@qibao.world</span></div>
+            </a>
+          </div>
+        </div>
+        <div class="contact-right">
+          <h3 class="form-title">给我留言 ✦</h3>
+          <form onsubmit="submitForm(event)">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" placeholder="怎么称呼你？" required />
+            </div>
+            <div class="form-group">
+              <label>Contact</label>
+              <input type="text" placeholder="邮箱或微信号" required />
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea placeholder="想说什么都可以..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-red">
+              <span id="submitText">发送消息</span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="quote-section reveal">
+        <p class="big-quote">
+          在真实世界中探索更多体验，<br/>
+          <span class="qr">每一天</span>都是人生中最年轻的一天！
+        </p>
+        <p class="quote-by">— 七宝的人生态度</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================
+     GALLERY PAGE
+     ================================================ -->
+<div class="page" id="page-gallery">
+  <div class="gallery-page">
+    <div class="container">
+      <div class="pop-header reveal">
+        <h1 class="pop-page-title">
+          相册<br/><span class="t-red">Gallery</span>
+        </h1>
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="gallery-tabs reveal">
+        <button class="gtab active" onclick="filterGallery('all', this)">全部</button>
+        <button class="gtab" onclick="filterGallery('travel', this)">旅行 ✈️</button>
+        <button class="gtab" onclick="filterGallery('food', this)">美食 🍳</button>
+        <button class="gtab" onclick="filterGallery('fitness', this)">健身 🏋️</button>
+        <button class="gtab" onclick="filterGallery('life', this)">生活 🌸</button>
+      </div>
+
+      <!-- Masonry grid -->
+      <div class="gallery-grid" id="galleryGrid">
+
+        <!-- Travel -->
+        <div class="g-item tall" data-cat="travel">
+          <div class="g-bg" style="background:linear-gradient(135deg,#0057FF,#00E5FF);">🇩🇿</div>
+          <div class="g-overlay"></div>
+          <div class="g-info">
+            <span class="g-cat">旅行</span>
+            <span class="g-title">阿尔及利亚 · 地中海</span>
+          </div>
+        </div>
+
+        <div class="g-item" data-cat="food">
+          <div class="g-bg" style="background:linear-gradient(135deg,#FF4081,#FF1744);">🍜</div>
+          <div class="g-overlay"></div>
+          <div class="g-info">
+            <span class="g-cat">美食</span>
+            <span class="g-title">北京烤鸭</span>
+          </div>
+        </div>
+
+        <div class="g-item" data-cat="fitness">
+          <div class="g-bg" style="background:linear-gradient(135deg,#FFE500,#FF9100);">🏋️</div>
+          <div class="g-overlay"></div>
+          <div class="g-info">
+            <span class="g-cat">健身</span>
+            <span class="g-title">Crossfit 训练日</span>
+          </div>
+        </div>
+
+        <div class="g-item wide" data-cat="travel">
+          <div class="g-bg" style="background:linear-gradient(135deg,#00C853,#1B5E20);">🇫🇷</div>
+          <div class="g-overlay"></div>
+          <div class="g-info">
+            <span class="g-cat">旅行</span>
+            <span class="g-title">法国 · 交换时光</span>
+          </div>
+        </div>
+
+        <div class="g-item" data-cat="life">
+          <div class="g-bg" style="background:linear-gradient(135deg,#C77DFF,#7B2FBE);">🎂</div>
+          <div class="g-overlay"></div>
+          <div class="g-info">
+            <span class="g-cat">生活</span>
+            <span class="g-title">烘焙作品</span>
+          </div>
+        </div>
+
+        <div class="g-item" data-cat="fitness">
+          <div class="g-bg" style="background:linear-gradient(135deg,#FF1744,#B71C1C);">🥊</div>
+          <div class="g-overlay"></div>
+          <div class="g-info">
+            <span class="g-cat">健身</span>
+            <span class="g-title">拳击训练</span>
+          </div>
+        </div>
+
+        <div class="g-item tall" data-cat="food">
+          <div class="g-bg" style="background:linear-gradient(135deg,#FF9100,#E65100);">🍰</div>
+          <div class="g-overlay"></div>
+          <div class="g-info">
+            <span class="g-cat">美食</span>
+            <span class="g-title">手工甜品</span>
+          </div>
+        </div>
+
+        <div class="g-item" data-cat="travel">
+          <div class="g-bg" style="background:linear-gradient(135deg,#00E5FF,#006064);">🤿</div>
+          <div class="g-overlay"></div>
+          <div class="g-info">
+            <span class="g-cat">旅行</span>
+            <span class="g-title">深海潜水</span>
+          </div>
+        </div>
+
+        <div class="g-item" data-cat="life">
+          <div class="g-bg" style="background:linear-gradient(135deg,#FFE500,#F9A825);">☀️</div>
+          <div class="g-overlay"></div>
+          <div class="g-info">
+            <span class="g-cat">生活</span>
+            <span class="g-title">北京的一天</span>
+          </div>
+        </div>
+
+        <div class="g-item wide" data-cat="food">
+          <div class="g-bg" style="background:linear-gradient(135deg,#FF4081,#AD1457);">🍣</div>
+          <div class="g-overlay"></div>
+          <div class="g-info">
+            <span class="g-cat">美食</span>
+            <span class="g-title">探店记录</span>
+          </div>
+        </div>
+
+        <div class="g-item" data-cat="fitness">
+          <div class="g-bg" style="background:linear-gradient(135deg,#00C853,#004D40);">🏄</div>
+          <div class="g-overlay"></div>
+          <div class="g-info">
+            <span class="g-cat">健身</span>
+            <span class="g-title">冲浪初体验</span>
+          </div>
+        </div>
+
+        <div class="g-item" data-cat="life">
+          <div class="g-bg" style="background:linear-gradient(135deg,#0057FF,#1A237E);">📚</div>
+          <div class="g-overlay"></div>
+          <div class="g-info">
+            <span class="g-cat">生活</span>
+            <span class="g-title">第一本译作出版</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================
+     FOOTER
+     ================================================ -->
+<footer class="footer container">
+  <div class="footer-logo">七宝<span>✦</span>WORLD</div>
+  <div class="footer-copy">© 2026 · ESTP · BEIJING · EXPLORER</div>
+  <div class="footer-links">
+    <a href="#" onclick="showPage('about');return false;">About</a>
+    <a href="#" onclick="showPage('blogs');return false;">Blog</a>
+    <a href="#" onclick="showPage('gallery');return false;">Gallery</a>
+    <a href="#" onclick="showPage('contact');return false;">Contact</a>
+  </div>
+</footer>
+
+<!-- ================================================
+     今日运势弹窗
+     ================================================ -->
+<div class="fortune-modal" id="fortuneModal" onclick="closeFortune(event)">
+  <div class="fortune-card" id="fortuneCard">
+    <button class="fortune-close" onclick="closeFortune()">✕</button>
+    <div class="fortune-header">
+      <div class="fortune-header-icon">✨</div>
+      <div class="fortune-date" id="fortuneDate"></div>
+      <h2 class="fortune-title">今日运势</h2>
+    </div>
+    <div class="fortune-body" id="fortuneBody">
+      <!-- 动态填充 -->
+    </div>
+    <div class="fortune-footer">
+      <button class="btn btn-yellow" onclick="refreshFortune()">🎲 再测一次</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

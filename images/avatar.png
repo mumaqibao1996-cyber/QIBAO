@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Error>
+	<Code>MirrorFailed</Code>
+	<Message>Error status: 400 from mirror host, should return 200 OK.</Message>
+	<Resource>/kos/nlav11592/upload/2026/04/05/1743837541.png</Resource>
+	<RequestId>NjlkMjBkOTRfNWNhNzI0MDlfMTMzMzhfMjBkYjY2NGE=</RequestId>
+	<TraceId>OGVmYzZiMmQzYjA2OWNhODk0NTRkMTBiOWVmMDAxODc0OWRkZjk0ZDM1NmI1M2E2MTRlY2MzZDhmNmI5MWI1OWRlZDk5YzgyOTg0ZTg2ODA1ODFjOGY0MWFhYWFhOTdmMDg4MDRkYjUwYTk0MjU1OWRmZmMyYTJhYmNhMmYzMTQ=</TraceId>
+</Error>
+

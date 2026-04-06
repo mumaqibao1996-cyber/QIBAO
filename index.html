@@ -787,7 +787,7 @@
   <div class="footer-logo">七宝的个人主页</div>
   <div class="footer-copy">© 2026 · ESTP · BEIJING · EXPLORER</div>
   <div class="footer-links">
-    <a href="#" onclick="showPage('about');return false;">About</a>
+    <a href="#" onclick="showPage('home');setTimeout(()=>{document.getElementById('home-about').scrollIntoView({behavior:'smooth'})},300);return false;">About</a>
     <a href="#" onclick="showPage('blogs');return false;">Blog</a>
     <a href="#" onclick="showPage('gallery');return false;">Gallery</a>
     <a href="#" onclick="showPage('contact');return false;">Contact</a>

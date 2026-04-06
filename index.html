@@ -403,69 +403,122 @@
     <div class="container">
       <div class="pop-header reveal">
         <h1 class="pop-page-title">
-          文章<br/><span class="t-red">Blogs</span>
+          文章 <span class="t-yellow">BLOG</span>
         </h1>
+        <p class="pop-header-desc">奇思妙想与干货分享</p>
       </div>
 
-      <div class="blog-featured reveal" onclick="">
-        <div class="bf-visual">🌍</div>
+      <!-- 搜索框 -->
+      <div class="blog-search reveal">
+        <div class="blog-search-wrap">
+          <svg class="blog-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"/>
+            <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+          </svg>
+          <input
+            type="text"
+            class="blog-search-input"
+            placeholder="搜索文章标题或关键词……"
+            oninput="filterBlogs(this.value)"
+          />
+          <button class="blog-search-clear" onclick="clearBlogSearch()" title="清除">✕</button>
+        </div>
+      </div>
+
+      <!-- 精选文章（最新：文科生实战技能） -->
+      <a class="blog-featured reveal" href="https://mp.weixin.qq.com/s/dUfVLmksvlognpVtmr4FFA" target="_blank" rel="noopener"
+         data-title="文科生上学别做无用功这5个实战技能打好工作基础" data-keywords="文科生 外语 出海 本地化 实战 就业">
+        <div class="bf-visual bf-visual--img">
+          <img src="images/blog-career.jpg" alt="文科生实战技能" class="bc-img">
+        </div>
         <div class="bf-content">
-          <div class="bf-cat">Career · 2025.11</div>
-          <h2 class="bf-title">从法语翻译到AI产品运营——我的跨界探索之路</h2>
-          <p class="bf-excerpt">从北非的阳光到北京写字楼的格子间，这五年我经历了五份截然不同的工作。每一次跳跃都是一次对自我的重新认识...</p>
-          <button class="btn btn-outline" style="font-size:0.8rem;padding:10px 22px;">阅读全文 →</button>
+          <div class="bf-cat">Career &amp; 实战 · 2025</div>
+          <h2 class="bf-title">文科生上学别做无用功，这5个实战技能打好工作基础</h2>
+          <p class="bf-excerpt">企业缺的不是"中译外"的机器，而是懂海外市场语境、懂用户心理、能落地的复合型人才。本地化、社媒运营、Discord……这5个方向帮你打破瞎忙活的僵局。</p>
+          <span class="btn btn-outline" style="font-size:0.8rem;padding:10px 22px;display:inline-block;">阅读全文 →</span>
+        </div>
+      </a>
+
+      <div class="blog-grid" id="blogGrid">
+        <!-- 卡片1：雅思备考 2025 -->
+        <a class="blog-card reveal" href="https://mp.weixin.qq.com/s/I5SIq691gt2ocj4J7lKizQ" target="_blank" rel="noopener"
+           data-title="法语人在职一个月备考雅思7分肝货分享" data-keywords="雅思 备考 法语 英语 IELTS 考试">
+          <div class="bc-cover bc-cover--img">
+            <img src="images/blog-ielts.jpg" alt="雅思备考" class="bc-img">
+          </div>
+          <div class="bc-body">
+            <div class="bc-cat">语言考试 · 2025</div>
+            <h3 class="bc-title">法语人在职一个月备考雅思7分肝货分享【无偿分享备考资料】</h3>
+            <div class="bc-meta">阅读全文 →</div>
+          </div>
+        </a>
+
+        <!-- 卡片2：简历笨办法 2025 -->
+        <a class="blog-card reveal" href="https://mp.weixin.qq.com/s/tFOgb-_J-ej3Hs71aC0vWw" target="_blank" rel="noopener"
+           data-title="3年换了6份工作靠这个笨办法拿到了转行入场券" data-keywords="简历 职场 跳槽 工作日报 AI 转行 求职">
+          <div class="bc-cover bc-cover--img">
+            <img src="images/blog-resume.jpg" alt="简历笨办法" class="bc-img">
+          </div>
+          <div class="bc-body">
+            <div class="bc-cat">Career · 2025</div>
+            <h3 class="bc-title">3年换了6份工作，靠这个"笨办法"拿到了转行入场券</h3>
+            <div class="bc-meta">阅读全文 →</div>
+          </div>
+        </a>
+
+        <!-- 卡片3：DALF口语表述 2023.05 -->
+        <a class="blog-card reveal" href="https://mp.weixin.qq.com/s/xM1xzim-RXB1DoiyzgeV_g" target="_blank" rel="noopener"
+           data-title="DALF exposé口语表述示例教师职业的未来" data-keywords="DALF 口语 法语 exposé 教师 考试">
+          <div class="bc-cover bc-cover--img">
+            <img src="images/blog-dalf.jpg" alt="DALF口语表述" class="bc-img">
+          </div>
+          <div class="bc-body">
+            <div class="bc-cat">法语学习 · 2023.05</div>
+            <h3 class="bc-title">DALF exposé&amp;口语表述示例｜教师职业的未来</h3>
+            <div class="bc-meta">阅读全文 →</div>
+          </div>
+        </a>
+
+        <!-- 卡片4：高中法语教资 2023 -->
+        <a class="blog-card reveal" href="https://mp.weixin.qq.com/s/iuOzHQW4UATePw6-NFWzVw" target="_blank" rel="noopener"
+           data-title="高中法语教师资格证考试干货纯享" data-keywords="教资 法语 教师资格证 面试 试讲 教案">
+          <div class="bc-cover bc-cover--img">
+            <img src="images/blog-cert.jpg" alt="高中法语教资" class="bc-img">
+          </div>
+          <div class="bc-body">
+            <div class="bc-cat">考证经验 · 2023</div>
+            <h3 class="bc-title">高中法语教师资格证考试干货纯享（文末附逐字稿）</h3>
+            <div class="bc-meta">阅读全文 →</div>
+          </div>
+        </a>
+
+        <!-- 卡片5：生态焦虑 2022.12 -->
+        <a class="blog-card reveal" href="https://mp.weixin.qq.com/s/6xCn0br1IS00Ra0uEGQlmA" target="_blank" rel="noopener"
+           data-title="生态焦虑引发心理健康危机DALF口语最新原题" data-keywords="生态焦虑 éco-anxiété 环境 DALF 口语 押题">
+          <div class="bc-cover bc-cover--img">
+            <img src="images/blog-eco.jpg" alt="生态焦虑押题" class="bc-img">
+          </div>
+          <div class="bc-body">
+            <div class="bc-cat">考前押题 · 2022.12</div>
+            <h3 class="bc-title">考前押题│生态焦虑引发心理健康危机（DALF口语最新原题！）</h3>
+            <div class="bc-meta">阅读全文 →</div>
+          </div>
+        </a>
+
+        <!-- 占位卡：LOADING MORE -->
+        <div class="blog-card blog-card--loading reveal">
+          <div class="bc-loading-inner">
+            <div class="bc-loading-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="bc-loading-text">LOADING MORE…</div>
+          </div>
         </div>
       </div>
 
-      <div class="blog-grid">
-        <div class="blog-card reveal">
-          <div class="bc-cover" style="background:#FFE500;">🏋️</div>
-          <div class="bc-body">
-            <div class="bc-cat">Fitness · 2025.6</div>
-            <h3 class="bc-title">拿下NSCA-CPT：备考三个月的真实体验</h3>
-            <div class="bc-meta">8 MIN READ</div>
-          </div>
-        </div>
-        <div class="blog-card reveal">
-          <div class="bc-cover" style="background:#00E5FF;">🇩🇿</div>
-          <div class="bc-body">
-            <div class="bc-cat">Travel · 2023.8</div>
-            <h3 class="bc-title">在阿尔及利亚的365天：地中海边的翻译日记</h3>
-            <div class="bc-meta">15 MIN READ</div>
-          </div>
-        </div>
-        <div class="blog-card reveal">
-          <div class="bc-cover" style="background:#FF4081;">🎂</div>
-          <div class="bc-body">
-            <div class="bc-cat">Baking · 2024.7</div>
-            <h3 class="bc-title">零基础到承包全组生日蛋糕：烘焙修炼手册</h3>
-            <div class="bc-meta">6 MIN READ</div>
-          </div>
-        </div>
-        <div class="blog-card reveal">
-          <div class="bc-cover" style="background:#0057FF;">🤿</div>
-          <div class="bc-body">
-            <div class="bc-cat">Sports · 2024.5</div>
-            <h3 class="bc-title">ESTP与潜水：当冒险型人格遇见深海</h3>
-            <div class="bc-meta">7 MIN READ</div>
-          </div>
-        </div>
-        <div class="blog-card reveal">
-          <div class="bc-cover" style="background:#00C853;">📖</div>
-          <div class="bc-body">
-            <div class="bc-cat">Translation · 2024.10</div>
-            <h3 class="bc-title">我翻译的第一本漫画书出版了！</h3>
-            <div class="bc-meta">9 MIN READ</div>
-          </div>
-        </div>
-        <div class="blog-card reveal">
-          <div class="bc-cover" style="background:#FF1744;">🥊</div>
-          <div class="bc-body">
-            <div class="bc-cat">Sports · 2025.3</div>
-            <h3 class="bc-title">女生打拳击：释放压力的最佳方式</h3>
-            <div class="bc-meta">5 MIN READ</div>
-          </div>
-        </div>
+      <!-- 无搜索结果提示 -->
+      <div class="blog-no-result" id="blogNoResult" style="display:none;">
+        <p>🔍 没有找到相关文章，换个关键词试试？</p>
       </div>
     </div>
   </div>

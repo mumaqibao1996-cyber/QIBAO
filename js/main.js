@@ -337,3 +337,50 @@ function refreshFortune() {
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') document.getElementById('navLinks').classList.remove('open');
 });
+
+// ===== Blog 搜索过滤 =====
+function filterBlogs(keyword) {
+  const q = keyword.trim().toLowerCase();
+  const featured = document.querySelector('.blog-featured');
+  const cards = document.querySelectorAll('.blog-card');
+  const noResult = document.getElementById('blogNoResult');
+
+  function matchEl(el) {
+    if (!q) return true;
+    const title    = (el.dataset.title    || '').toLowerCase();
+    const keywords = (el.dataset.keywords || '').toLowerCase();
+    const text     = el.innerText.toLowerCase();
+    return title.includes(q) || keywords.includes(q) || text.includes(q);
+  }
+
+  // 搜索 featured
+  let visibleCount = 0;
+  if (featured) {
+    const show = matchEl(featured);
+    featured.style.display = show ? '' : 'none';
+    if (show) visibleCount++;
+  }
+
+  // 搜索普通卡片
+  cards.forEach(card => {
+    const show = matchEl(card);
+    card.style.display = show ? '' : 'none';
+    if (show) visibleCount++;
+  });
+
+  // 无结果提示
+  if (noResult) noResult.style.display = (q && visibleCount === 0) ? '' : 'none';
+
+  // 清除按钮显隐
+  const clearBtn = document.querySelector('.blog-search-clear');
+  if (clearBtn) clearBtn.style.opacity = q ? '0.6' : '';
+}
+
+function clearBlogSearch() {
+  const input = document.querySelector('.blog-search-input');
+  if (input) {
+    input.value = '';
+    filterBlogs('');
+    input.focus();
+  }
+}

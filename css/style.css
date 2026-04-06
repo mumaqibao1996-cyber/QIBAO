@@ -1377,7 +1377,7 @@ ul { list-style: none; }
 .video-card:hover .v-bg { font-size: 5.5rem; }
 .v-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(17,17,17,0.85) 40%, transparent 80%);
+  background: linear-gradient(to top, rgba(17,17,17,0.55) 20%, transparent 50%);
 }
 .v-play {
   position: absolute;

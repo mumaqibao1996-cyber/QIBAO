@@ -732,7 +732,7 @@ ul { list-style: none; }
 /* ==============================================
    ABOUT PAGE
    ============================================== */
-.about-page { padding-top: 40px; padding-bottom: 6rem; }
+.about-page { padding-top: 40px; padding-bottom: 0; }
 
 .about-hero {
   display: grid;
@@ -924,65 +924,132 @@ ul { list-style: none; }
 }
 .lc-sub {
   font-family: var(--font-display);
-  font-size: 0.85rem;
+  font-size: 1.15rem;
   letter-spacing: 1px;
   font-weight: 400;
   color: var(--black);
   transition: color 0.2s;
 }
 
-/* Timeline */
+/* Timeline - 左右交替时间轴 */
 .timeline-section { margin-bottom: 4rem; }
-.tl-grid {
+
+/* 列标题行 */
+.tl-headers {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  border: var(--border-thick);
-  box-shadow: var(--shadow-lg);
+  grid-template-columns: 1fr 24px 1fr;
+  gap: 0 1rem;
+  margin-bottom: 1.5rem;
 }
-.tl-col {
-  padding: 2.5rem;
-}
-.tl-col:first-child {
-  border-right: var(--border-thick);
-  background: var(--blue);
-  color: var(--white);
-}
-.tl-col:last-child {
-  background: var(--offwhite);
-}
-.tl-col-title {
+.tl-header-left {
+  grid-column: 1;
+  justify-self: end;
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 0.72rem;
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 3px solid currentColor;
+  background: var(--blue);
+  color: var(--white);
+  padding: 4px 14px;
+  border: var(--border-thick);
 }
-.tl-item {
-  display: flex;
-  gap: 1.2rem;
-  padding: 0.9rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-  transition: all 0.15s;
-}
-.tl-col:last-child .tl-item { border-bottom-color: rgba(0,0,0,0.08); }
-.tl-item:last-child { border-bottom: none; }
-.tl-item:hover { padding-left: 8px; }
-.tl-yr {
+.tl-header-right {
+  grid-column: 3;
+  justify-self: start;
   font-family: var(--font-display);
-  font-size: 0.75rem;
-  letter-spacing: 1px;
-  min-width: 60px;
-  padding-top: 2px;
-  opacity: 0.7;
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background: var(--yellow);
+  color: var(--black);
+  padding: 4px 14px;
+  border: var(--border-thick);
 }
-.tl-ev {
+
+.tl-axis {
+  position: relative;
+  padding: 2rem 0;
+}
+
+/* 中间竖线 */
+.tl-axis::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 3px;
+  background: var(--black);
+  transform: translateX(-50%);
+}
+
+/* 每个节点：两列布局，中间留竖轴 */
+.tl-node {
+  display: grid;
+  grid-template-columns: 1fr 24px 1fr;
+  align-items: center;
+  gap: 0 1rem;
+  margin-bottom: 1.8rem;
+  position: relative;
+}
+
+/* 圆点 */
+.tl-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--black);
+  border: 3px solid var(--white);
+  outline: 3px solid var(--black);
+  justify-self: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* 卡片通用 */
+.tl-card {
+  padding: 0.9rem 1.2rem;
+  border: var(--border-thick);
+  box-shadow: 4px 4px 0 var(--black);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.tl-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--black);
+}
+.tl-card-blue { background: var(--blue); color: var(--white); }
+.tl-card-yellow { background: var(--yellow); color: var(--black); }
+
+.tl-card-tag {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 0.3rem;
+}
+.tl-card-ev {
   font-family: var(--font-zh);
   font-size: 0.92rem;
   line-height: 1.5;
 }
+
+/* 年份标签 */
+.tl-yr-label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  opacity: 0.55;
+}
+
+/* 左节点：卡片在左列（col1），年份在右列（col3） */
+.tl-left .tl-card  { grid-column: 1; justify-self: end; width: 100%; }
+.tl-left .tl-dot   { grid-column: 2; }
+.tl-left .tl-yr-label { grid-column: 3; justify-self: start; }
+
+/* 右节点：年份在左列（col1），卡片在右列（col3） */
+.tl-right .tl-yr-label { grid-column: 1; justify-self: end; }
+.tl-right .tl-dot  { grid-column: 2; }
+.tl-right .tl-card { grid-column: 3; justify-self: start; width: 100%; }
 
 /* ==============================================
    BLOGS PAGE

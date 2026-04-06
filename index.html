@@ -559,19 +559,19 @@
           <div class="v-bg" style="padding:0;font-size:0;"><img src="images/video-boxing.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"></div>
           <div class="v-overlay"></div>
           <div class="v-play">▶</div>
-          <div class="v-info"><div class="v-cat">拳击</div><div class="v-title">女生打拳击 | 释放压力的最佳方式</div></div>
+          <div class="v-info"><div class="v-cat">感悟</div><div class="v-title">成功通过任何考试的方法</div></div>
         </div>
         <div class="video-card reveal" onclick="window.open('https://www.xiaohongshu.com/explore/694168f7000000001f00dde5','_blank')" style="background:#000;">
           <div class="v-bg" style="padding:0;font-size:0;"><img src="images/video-algeria.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"></div>
           <div class="v-overlay"></div>
           <div class="v-play">▶</div>
-          <div class="v-info"><div class="v-cat">旅行</div><div class="v-title">北非阿尔及利亚vlog | 我的工作地点</div></div>
+          <div class="v-info"><div class="v-cat">感悟</div><div class="v-title">外语生邪修技能</div></div>
         </div>
         <div class="video-card reveal" onclick="window.open('https://www.xiaohongshu.com/explore/6891ff0c0000000023022bc4','_blank')" style="background:#000;">
           <div class="v-bg" style="padding:0;font-size:0;"><img src="images/video-food.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"></div>
           <div class="v-overlay"></div>
           <div class="v-play">▶</div>
-          <div class="v-info"><div class="v-cat">美食</div><div class="v-title">北非最想念的中国美食 | 终于回家</div></div>
+          <div class="v-info"><div class="v-cat">感悟</div><div class="v-title">天降大帅哥不可能 帅哥真的超级抢手</div></div>
         </div>
       </div>
     </div>
@@ -721,18 +721,18 @@
       <!-- Filter tabs -->
       <div class="gallery-tabs reveal">
         <button class="gtab active" onclick="filterGallery('all', this)">全部</button>
-        <button class="gtab" onclick="filterGallery('travel', this)">旅行 ✈️</button>
-        <button class="gtab" onclick="filterGallery('food', this)">美食 🍳</button>
-        <button class="gtab" onclick="filterGallery('fitness', this)">健身 🏋️</button>
-        <button class="gtab" onclick="filterGallery('life', this)">生活 🌸</button>
+        <button class="gtab" onclick="filterGallery('travel', this)">旅行</button>
+        <button class="gtab" onclick="filterGallery('food', this)">美食</button>
+        <button class="gtab" onclick="filterGallery('fitness', this)">健身</button>
+        <button class="gtab" onclick="filterGallery('life', this)">生活</button>
       </div>
 
       <!-- Masonry grid -->
       <div class="gallery-grid" id="galleryGrid">
 
         <!-- Travel -->
-        <div class="g-item" data-cat="travel">
-          <div class="g-bg" style="background:linear-gradient(135deg,#0057FF,#00E5FF);">🇩🇿</div>
+        <div class="g-item" data-cat="travel" onclick="openAlgeriaLightbox()" style="cursor:pointer;">
+          <div class="g-bg" style="background:#000;padding:0;font-size:0;"><img src="images/gallery-algeria/IMG_6787.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></div>
           <div class="g-overlay"></div>
           <div class="g-info">
             <span class="g-cat">旅行</span>
@@ -740,14 +740,6 @@
           </div>
         </div>
 
-        <div class="g-item" data-cat="food">
-          <div class="g-bg" style="background:linear-gradient(135deg,#FF4081,#FF1744);">🍜</div>
-          <div class="g-overlay"></div>
-          <div class="g-info">
-            <span class="g-cat">美食</span>
-            <span class="g-title">北京烤鸭</span>
-          </div>
-        </div>
 
         <div class="g-item" data-cat="fitness">
           <div class="g-bg" style="background:linear-gradient(135deg,#FFE500,#FF9100);">🏋️</div>
@@ -776,23 +768,7 @@
           </div>
         </div>
 
-        <div class="g-item" data-cat="fitness">
-          <div class="g-bg" style="background:linear-gradient(135deg,#FF1744,#B71C1C);">🥊</div>
-          <div class="g-overlay"></div>
-          <div class="g-info">
-            <span class="g-cat">健身</span>
-            <span class="g-title">拳击训练</span>
-          </div>
-        </div>
 
-        <div class="g-item" data-cat="food">
-          <div class="g-bg" style="background:linear-gradient(135deg,#FF9100,#E65100);">🍰</div>
-          <div class="g-overlay"></div>
-          <div class="g-info">
-            <span class="g-cat">美食</span>
-            <span class="g-title">手工甜品</span>
-          </div>
-        </div>
 
         <div class="g-item" data-cat="travel">
           <div class="g-bg" style="background:linear-gradient(135deg,#00E5FF,#006064);">🤿</div>
@@ -803,14 +779,6 @@
           </div>
         </div>
 
-        <div class="g-item" data-cat="life">
-          <div class="g-bg" style="background:linear-gradient(135deg,#FFE500,#F9A825);">☀️</div>
-          <div class="g-overlay"></div>
-          <div class="g-info">
-            <span class="g-cat">生活</span>
-            <span class="g-title">北京的一天</span>
-          </div>
-        </div>
 
         <div class="g-item" data-cat="food">
           <div class="g-bg" style="background:linear-gradient(135deg,#FF4081,#AD1457);">🍣</div>
@@ -879,5 +847,61 @@
 </div>
 
 <script src="js/main.js"></script>
+
+<!-- Algeria Lightbox -->
+<div id="algeriaLightbox" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.95);flex-direction:column;align-items:center;justify-content:center;">
+  <button onclick="closeLightbox()" style="position:absolute;top:20px;right:28px;background:none;border:none;color:#fff;font-size:36px;cursor:pointer;z-index:10000;line-height:1;">✕</button>
+  <button onclick="lbPrev()" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.15);border:none;color:#fff;font-size:32px;width:48px;height:64px;cursor:pointer;border-radius:4px;">‹</button>
+  <button onclick="lbNext()" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.15);border:none;color:#fff;font-size:32px;width:48px;height:64px;cursor:pointer;border-radius:4px;">›</button>
+  <img id="lbImg" src="" style="max-width:90vw;max-height:85vh;object-fit:contain;border-radius:4px;box-shadow:0 8px 40px rgba(0,0,0,0.8);">
+  <div id="lbCounter" style="color:rgba(255,255,255,0.6);font-size:13px;margin-top:14px;letter-spacing:2px;"></div>
+</div>
+
+<script>
+const algeriaImgs = [
+  'images/gallery-algeria/IMG_2242.jpg',
+  'images/gallery-algeria/IMG_4785.jpg',
+  'images/gallery-algeria/IMG_4789.jpg',
+  'images/gallery-algeria/IMG_4791.jpg',
+  'images/gallery-algeria/IMG_6787.jpg',
+  'images/gallery-algeria/IMG_6842.jpg',
+  'images/gallery-algeria/IMG_6978.jpg',
+  'images/gallery-algeria/IMG_7018.jpg',
+  'images/gallery-algeria/IMG_7022.jpg',
+  'images/gallery-algeria/IMG_7127.jpg',
+  'images/gallery-algeria/IMG_9806.jpg',
+  'images/gallery-algeria/P1011901.jpg',
+  'images/gallery-algeria/P1011917.jpg',
+  'images/gallery-algeria/P1011937.jpg',
+  'images/gallery-algeria/P1012024.jpg'
+];
+let lbIndex = 0;
+function openAlgeriaLightbox(i) {
+  lbIndex = i || 0;
+  document.getElementById('algeriaLightbox').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  lbShow();
+}
+function closeLightbox() {
+  document.getElementById('algeriaLightbox').style.display = 'none';
+  document.body.style.overflow = '';
+}
+function lbShow() {
+  document.getElementById('lbImg').src = algeriaImgs[lbIndex];
+  document.getElementById('lbCounter').textContent = (lbIndex + 1) + ' / ' + algeriaImgs.length;
+}
+function lbPrev() { lbIndex = (lbIndex - 1 + algeriaImgs.length) % algeriaImgs.length; lbShow(); }
+function lbNext() { lbIndex = (lbIndex + 1) % algeriaImgs.length; lbShow(); }
+document.getElementById('algeriaLightbox').addEventListener('click', function(e) {
+  if (e.target === this) closeLightbox();
+});
+document.addEventListener('keydown', function(e) {
+  const lb = document.getElementById('algeriaLightbox');
+  if (lb.style.display === 'none') return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') lbPrev();
+  if (e.key === 'ArrowRight') lbNext();
+});
+</script>
 </body>
 </html>

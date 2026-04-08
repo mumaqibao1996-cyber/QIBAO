@@ -206,23 +206,58 @@ window.addEventListener('load', triggerReveal);
 window.addEventListener('scroll', triggerReveal, { passive: true });
 
 // ===== Form submit =====
-function submitForm(e) {
+async function submitForm(e) {
   e.preventDefault();
   const btn = document.getElementById('submitText');
   if (!btn) return;
   const orig = btn.textContent;
+  const form = e.target;
+  const button = btn.closest('button');
+
+  // 收集表单数据
+  const inputs = form.querySelectorAll('input, textarea');
+  const name    = inputs[0] ? inputs[0].value.trim() : '';
+  const contact = inputs[1] ? inputs[1].value.trim() : '';
+  const message = inputs[2] ? inputs[2].value.trim() : '';
+
   btn.textContent = '发送中...';
-  btn.closest('button').disabled = true;
-  setTimeout(() => {
-    btn.textContent = '✓ 已发送！';
-    btn.closest('button').style.background = 'var(--green)';
+  button.disabled = true;
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: '0611ec50-d9bb-4d64-a95d-25892e5bd9ac',
+        subject: '【七宝主页】新留言来啦 🌟',
+        from_name: name || '访客',
+        name: name,
+        contact: contact,
+        message: message,
+      }),
+    });
+    const data = await res.json();
+    if (data.success) {
+      btn.textContent = '✓ 已发送！';
+      button.style.background = '#22c55e';
+      form.reset();
+      setTimeout(() => {
+        btn.textContent = orig;
+        button.style.background = '';
+        button.disabled = false;
+      }, 3000);
+    } else {
+      throw new Error(data.message || '发送失败');
+    }
+  } catch (err) {
+    btn.textContent = '发送失败，请重试';
+    button.style.background = '#ef4444';
+    button.disabled = false;
     setTimeout(() => {
       btn.textContent = orig;
-      btn.closest('button').style.background = '';
-      btn.closest('button').disabled = false;
-      e.target.reset();
+      button.style.background = '';
     }, 3000);
-  }, 1000);
+  }
 }
 
 // ===== Gallery Filter =====

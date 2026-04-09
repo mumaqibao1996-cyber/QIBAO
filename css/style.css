@@ -1821,3 +1821,318 @@ ul { list-style: none; }
   .footer { flex-direction: column; gap: 1rem; text-align: center; background: var(--black); }
   .pop-page-title { font-size: clamp(3.5rem, 10vw, 7rem); }
 }
+
+/* ================================================
+   VIBE CODING 子页面 v2
+   ================================================ */
+.vibe-page {
+  min-height: 100vh;
+  background: var(--offwhite);
+}
+
+/* ── Hero Banner ── */
+.vibe-hero {
+  background: var(--black);
+  padding: 6rem 0 3rem;
+  border-bottom: 3px solid var(--yellow);
+}
+.vibe-hero .vibe-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-bottom: 3rem;
+  transition: color 0.15s;
+}
+.vibe-hero .vibe-back-btn:hover { color: var(--yellow); }
+.vibe-hero-label {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 1.5rem;
+}
+.vibe-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 7rem);
+  line-height: 1;
+  color: var(--white);
+  letter-spacing: 0em;
+  word-spacing: 0.06em;
+  margin-bottom: 1.5rem;
+  white-space: nowrap;
+}
+.vibe-hero-accent {
+  color: var(--yellow);
+  font-style: italic;
+  margin: 0 0.03em;
+}
+.vibe-hero-sub {
+  font-family: var(--font-zh);
+  font-size: 1rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  max-width: 500px;
+  margin-bottom: 3rem;
+}
+.vibe-hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+.vibe-stat { display: flex; flex-direction: column; gap: 0.2rem; }
+.vibe-stat-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--yellow);
+  line-height: 1;
+}
+.vibe-stat-label {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.35);
+}
+.vibe-stat-sep {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.15);
+}
+
+/* ── 作品列表 ── */
+.vibe-works-list {
+  padding: 3rem 0 5rem;
+}
+
+/* 每一行作品 */
+.vwi {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 0;
+  border: var(--border-thick);
+  margin-bottom: -2px; /* 合并边框 */
+  background: var(--white);
+  transition: transform 0.15s, box-shadow 0.15s;
+  position: relative;
+}
+/* 已上线卡片悬停效果（01 和 02 统一） */
+.vwi:not(.placeholder):hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0 var(--black);
+  z-index: 2;
+}
+/* 移除 featured 黑底，只保留间距 */
+.vwi.featured {
+  background: var(--white);
+  margin-bottom: 0;
+  z-index: 1;
+}
+/* 黑金 dark 卡片（02 大模型演进史） */
+.vwi.dark {
+  background: var(--black);
+  box-shadow: 6px 6px 0 var(--yellow);
+  margin-bottom: 2px;
+}
+.vwi.dark:not(.placeholder):hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--yellow);
+}
+.vwi.dark .vwi-left {
+  border-right-color: rgba(255,255,255,0.15);
+}
+.vwi.dark .vwi-num { color: rgba(255,255,255,0.3); }
+.vwi.dark .vwi-title { color: var(--yellow); }
+.vwi.dark .vwi-desc { color: rgba(255,255,255,0.65); }
+.vwi.dark .vwi-footer { border-top-color: rgba(255,255,255,0.1); }
+.vwi.dark .tag {
+  border-color: rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.7);
+  background: transparent;
+}
+.vwi.dark .vwi-btn {
+  background: var(--yellow);
+  color: var(--black);
+  border-color: var(--yellow);
+}
+.vwi.dark .vwi-btn:hover {
+  background: transparent;
+  color: var(--yellow);
+}
+.vwi.dark .vwi-icon svg circle,
+.vwi.dark .vwi-icon svg line {
+  stroke: rgba(255,255,255,0.6);
+}
+
+.vwi.placeholder {
+  background: var(--offwhite);
+  opacity: 0.55;
+  margin-top: -2px;            /* 紧贴上方卡片 */
+  margin-left: 0;
+  grid-template-columns: 100px 1fr;
+  border-style: dashed;
+  border-color: rgba(17,17,17,0.18);
+}
+.vwi.placeholder + .vwi.placeholder {
+  margin-top: 4px;
+}
+/* placeholder 左侧缩小 */
+.vwi.placeholder .vwi-left {
+  padding: 1.2rem 0.6rem;
+}
+.vwi.placeholder .vwi-num {
+  font-size: 0.55rem;
+  color: rgba(17,17,17,0.2);
+}
+/* placeholder 右侧缩小 */
+.vwi.placeholder .vwi-body {
+  padding: 1.2rem 1.5rem;
+  min-height: unset;
+  gap: 0.5rem;
+}
+.vwi.placeholder .vwi-title {
+  font-size: 1.1rem;
+  color: rgba(17,17,17,0.28);
+}
+.vwi.placeholder .vwi-desc {
+  font-size: 0.8rem;
+  color: rgba(17,17,17,0.25);
+}
+.vwi.placeholder .vwi-footer {
+  padding-top: 0.6rem;
+  border-top-color: rgba(17,17,17,0.06);
+}
+
+/* 已上线普通卡片（02 等）加 live class 高亮左侧 */
+.vwi.live .vwi-left {
+  border-right-color: var(--black);
+}
+.vwi.live .vwi-num {
+  color: rgba(17,17,17,0.5);
+}
+
+/* 左侧序号列 */
+.vwi-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 1rem;
+  border-right: var(--border-thick);
+  gap: 1.5rem;
+}
+
+.vwi-num {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  color: rgba(17,17,17,0.3);
+}
+
+
+/* 右侧主体 */
+.vwi-body {
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 200px;
+}
+.vwi-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.vwi-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  line-height: 1.1;
+  color: var(--black);
+  margin: 0;
+}
+
+.vwi-title.dim { color: rgba(17,17,17,0.3); }
+.vwi-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-self: center;
+}
+
+.vwi-desc {
+  font-family: var(--font-zh);
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: rgba(17,17,17,0.6);
+  flex: 1;
+  max-width: 560px;
+}
+
+.vwi-desc.dim { color: rgba(17,17,17,0.3); }
+.vwi-footer {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(17,17,17,0.08);
+  margin-top: auto;
+}
+
+
+/* CTA Button */
+.vwi-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  padding: 10px 24px;
+  background: var(--yellow);
+  color: var(--black);
+  border: 2px solid var(--yellow);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.12s;
+}
+.vwi-btn:hover:not(:disabled) {
+  background: transparent;
+  color: var(--yellow);
+  transform: translate(-2px, -2px);
+}
+.vwi-btn.ghost {
+  background: transparent;
+  color: rgba(17,17,17,0.25);
+  border: 2px dashed rgba(17,17,17,0.2);
+  cursor: not-allowed;
+}
+
+/* Badge */
+.vwi-badge {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+}
+.vwi-badge.live { color: #22c55e; }
+.vwi-badge.soon { color: rgba(17,17,17,0.3); }
+
+/* icon dim */
+.vwi-icon.dim svg * { stroke: rgba(17,17,17,0.15) !important; fill: none !important; }
+
+/* 响应式 */
+@media (max-width: 767px) {
+  .vibe-hero-title { letter-spacing: -0.5px; font-size: clamp(1.8rem, 8vw, 3.5rem); white-space: normal; }
+  .vwi { grid-template-columns: 60px 1fr; }
+  .vwi-body { padding: 1.5rem 1.2rem; }
+  .vwi-title { font-size: 1.6rem; }
+  .vwi-left { padding: 1.5rem 0.5rem; }
+}

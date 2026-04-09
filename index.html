@@ -10,7 +10,7 @@
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=Noto+Sans+SC:wght@300;400;500&display=swap" />
   <noscript><link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=Noto+Sans+SC:wght@300;400;500&display=swap" /></noscript>
-  <link rel="stylesheet" href="css/style.css?v=20260408c" />
+  <link rel="stylesheet" href="css/style.css?v=20260409h" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>" />
 </head>
 <body>
@@ -608,7 +608,7 @@
           <span class="proj-arrow">→</span>
         </div>
 
-        <div class="proj-card reveal" onclick="window.open('https://mumaqibao1996-cyber.github.io/himym-game/','_blank')" style="cursor:pointer;">
+        <div class="proj-card reveal" onclick="showPage('vibe')" style="cursor:pointer;">
           <span class="proj-num">PROJECT 02</span>
           <div class="proj-icon">
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -626,6 +626,121 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- ================================================
+     VIBE CODING 子页面
+     ================================================ -->
+<div class="page" id="page-vibe">
+  <div class="vibe-page">
+
+    <!-- Hero Banner -->
+    <div class="vibe-hero">
+      <div class="container">
+        <button class="vibe-back-btn" onclick="showPage('projects')">← PROJECTS</button>
+        <div class="vibe-hero-body">
+          <p class="vibe-hero-label">VIBE CODING · 独立开发作品集</p>
+          <h1 class="vibe-hero-title">AI <span class="vibe-hero-accent">Vibe</span> Coding</h1>
+          <p class="vibe-hero-sub">用 AI 辅助编程独立构建网页应用 · 人人皆可创造</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 作品列表 -->
+    <div class="container">
+      <div class="vibe-works-list">
+
+        <!-- 01 HIMYM -->
+        <article class="vwi live">
+          <div class="vwi-left">
+            <span class="vwi-num">01</span>
+            <div class="vwi-icon">
+              <svg width="52" height="52" viewBox="0 0 48 48" fill="none">
+                <path d="M24 38C24 38 8 28 8 17C8 12 12 8 17 8C20 8 22.5 9.5 24 12C25.5 9.5 28 8 31 8C36 8 40 12 40 17C40 28 24 38 24 38Z" fill="#FFE500" stroke="#111" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="vwi-body">
+            <div class="vwi-header">
+              <h2 class="vwi-title">HIMYM 互动游戏</h2>
+              <div class="vwi-tags">
+                <span class="tag">视觉小说</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">HIMYM</span>
+              </div>
+            </div>
+            <p class="vwi-desc">以《老爸老妈浪漫史》为蓝本的视觉小说游戏，涵盖 Season 1–3 核心剧情，支持剧情分支选择、角色好感度系统与成就解锁。</p>
+            <div class="vwi-footer">
+              <button class="vwi-btn" onclick="window.open('https://mumaqibao1996-cyber.github.io/himym-game/','_blank')">立即体验 →</button>
+              <span class="vwi-badge live">● LIVE</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 02 大模型演进史 -->
+        <article class="vwi live dark">
+          <div class="vwi-left">
+            <span class="vwi-num">02</span>
+            <div class="vwi-icon">
+              <svg width="52" height="52" viewBox="0 0 48 48" fill="none">
+                <!-- 大脑/网络节点图标 -->
+                <circle cx="24" cy="14" r="4" fill="none" stroke="#111" stroke-width="2"/>
+                <circle cx="10" cy="34" r="4" fill="none" stroke="#111" stroke-width="2"/>
+                <circle cx="38" cy="34" r="4" fill="none" stroke="#111" stroke-width="2"/>
+                <circle cx="24" cy="34" r="4" fill="none" stroke="#111" stroke-width="2"/>
+                <line x1="24" y1="18" x2="24" y2="30" stroke="#111" stroke-width="1.5"/>
+                <line x1="24" y1="18" x2="10" y2="30" stroke="#111" stroke-width="1.5"/>
+                <line x1="24" y1="18" x2="38" y2="30" stroke="#111" stroke-width="1.5"/>
+                <line x1="14" y1="34" x2="20" y2="34" stroke="#111" stroke-width="1.5"/>
+                <line x1="28" y1="34" x2="34" y2="34" stroke="#111" stroke-width="1.5"/>
+              </svg>
+            </div>
+          </div>
+          <div class="vwi-body">
+            <div class="vwi-header">
+              <h2 class="vwi-title">大模型演进史</h2>
+              <div class="vwi-tags">
+                <span class="tag">全景图谱</span>
+                <span class="tag">数据可视化</span>
+                <span class="tag">可交互</span>
+              </div>
+            </div>
+            <p class="vwi-desc">收录 MiniMax、GLM、Qwen、DeepSeek、Gemini、Claude、GPT 等主流厂商全量周期性迭代数据，共计 164 个节点，可视化呈现 AI 大模型发展全貌。</p>
+            <div class="vwi-footer">
+              <button class="vwi-btn" onclick="window.open('https://gemini.google.com/share/7d47000fe9e4','_blank')">查看图谱 →</button>
+              <span class="vwi-badge live">● LIVE</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 03 占位 -->
+        <article class="vwi placeholder">
+          <div class="vwi-left">
+            <span class="vwi-num">03</span>
+            <div class="vwi-icon dim">
+              <svg width="52" height="52" viewBox="0 0 48 48" fill="none">
+                <rect x="10" y="10" width="28" height="28" rx="3" stroke="rgba(17,17,17,0.2)" stroke-width="2" stroke-dasharray="4 3" fill="none"/>
+                <line x1="24" y1="17" x2="24" y2="31" stroke="rgba(17,17,17,0.2)" stroke-width="2" stroke-linecap="round"/>
+                <line x1="17" y1="24" x2="31" y2="24" stroke="rgba(17,17,17,0.2)" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="vwi-body">
+            <div class="vwi-header">
+              <h2 class="vwi-title dim">下一个作品</h2>
+            </div>
+            <p class="vwi-desc dim">正在构建中，敬请期待……</p>
+            <div class="vwi-footer">
+              <button class="vwi-btn ghost" disabled>即将上线</button>
+              <span class="vwi-badge soon">◌ SOON</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
   </div>
 </div>
 

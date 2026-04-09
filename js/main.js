@@ -419,25 +419,3 @@ function clearBlogSearch() {
     input.focus();
   }
 }
-
-// ===== Vibe Coding 详情页 =====
-function openVibePage() {
-  const modal = document.getElementById('vibeModal');
-  if (!modal) return;
-  modal.classList.add('open');
-  modal.scrollTop = 0;
-  document.body.style.overflow = 'hidden';
-}
-function closeVibePage() {
-  const modal = document.getElementById('vibeModal');
-  if (!modal) return;
-  modal.classList.remove('open');
-  document.body.style.overflow = '';
-}
-function handleVibeOverlayClick(e) {
-  // 点击遮罩层（非内容区）关闭
-  if (e.target === document.getElementById('vibeModal')) closeVibePage();
-}
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeVibePage();
-});

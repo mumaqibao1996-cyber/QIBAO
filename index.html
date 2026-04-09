@@ -608,7 +608,7 @@
           <span class="proj-arrow">→</span>
         </div>
 
-        <div class="proj-card reveal" onclick="openVibePage()" style="cursor:pointer;">
+        <div class="proj-card reveal" onclick="window.open('https://mumaqibao1996-cyber.github.io/himym-game/','_blank')" style="cursor:pointer;">
           <span class="proj-num">PROJECT 02</span>
           <div class="proj-icon">
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1001,66 +1001,5 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'ArrowRight') lbNext();
 });
 </script>
-<!-- ================================================
-     VIBE CODING 详情弹窗
-     ================================================ -->
-<div class="vibe-modal" id="vibeModal" onclick="handleVibeOverlayClick(event)">
-  <div class="vibe-modal-inner">
-    <div class="vibe-modal-header">
-      <button class="vibe-close" onclick="closeVibePage()">✕</button>
-      <span class="vibe-modal-num">PROJECT 02</span>
-      <h2 class="vibe-modal-title">Vibe <span class="t-yellow">Coding</span></h2>
-      <p class="vibe-modal-sub">用 AI 辅助编程独立构建的作品集 · 人人皆可创造</p>
-    </div>
-    <div class="vibe-works-grid">
-
-      <!-- 作品 1：HIMYM 互动游戏（可跳转） -->
-      <div class="vibe-work-card featured" onclick="window.open('https://mumaqibao1996-cyber.github.io/himym-game/','_blank')">
-        <div class="vwc-num">01</div>
-        <div class="vwc-icon">
-          <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 38 C24 38 8 28 8 17 C8 12 12 8 17 8 C20 8 22.5 9.5 24 12 C25.5 9.5 28 8 31 8 C36 8 40 12 40 17 C40 28 24 38 24 38Z" fill="#FFE500" stroke="#111" stroke-width="2" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h3 class="vwc-title">HIMYM 互动游戏</h3>
-        <p class="vwc-desc">以《老爸老妈浪漫史》为蓝本的视觉小说游戏，涵盖 Season 1–3 核心剧情，支持剧情选择、好感度系统与成就解锁。</p>
-        <div class="vwc-tags"><span class="tag">视觉小说</span><span class="tag">JavaScript</span><span class="tag">HIMYM</span></div>
-        <div class="vwc-cta">点击体验 →</div>
-      </div>
-
-      <!-- 作品 2：占位 -->
-      <div class="vibe-work-card coming-soon">
-        <div class="vwc-num">02</div>
-        <div class="vwc-icon">
-          <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="8" y="8" width="32" height="32" rx="4" stroke="#111" stroke-width="2.5" fill="none" stroke-dasharray="5 3"/>
-            <line x1="24" y1="16" x2="24" y2="32" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="16" y1="24" x2="32" y2="24" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <h3 class="vwc-title">下一个作品</h3>
-        <p class="vwc-desc">正在构建中，敬请期待……</p>
-        <div class="vwc-badge">COMING SOON</div>
-      </div>
-
-      <!-- 作品 3：占位 -->
-      <div class="vibe-work-card coming-soon">
-        <div class="vwc-num">03</div>
-        <div class="vwc-icon">
-          <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="8" y="8" width="32" height="32" rx="4" stroke="#111" stroke-width="2.5" fill="none" stroke-dasharray="5 3"/>
-            <line x1="24" y1="16" x2="24" y2="32" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="16" y1="24" x2="32" y2="24" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <h3 class="vwc-title">下一个作品</h3>
-        <p class="vwc-desc">正在构建中，敬请期待……</p>
-        <div class="vwc-badge">COMING SOON</div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
 </body>
 </html>
